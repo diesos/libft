@@ -11,6 +11,6 @@ Objectifs:
 - Generation d'une librairie statique
 
 Skills:
-- Algorithmie et intelligence artificielle
+- Algorithmie
 - Rigueur
 - Programmation imperative

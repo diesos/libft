@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 20:01:32 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/06 14:19:45 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/06 19:24:46 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
+	int		i;
+	char	*ptr;
 
+	ptr = (char *)s;
+	if (!ptr)
+		return (NULL);
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (ptr)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		if (*ptr == c)
+			return (&(*ptr));
+		ptr++;
 	}
-	return (0);
+	return (NULL);
 }
 // #include <stdio.h>
 // #include <string.h>
@@ -32,11 +35,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // int	main(void)
 // {
 // 	char	*str;
-// 	char	*str2;
+// 	int		c;
 
-// 	str = "Helld";
-// 	str2 = "Horld";
-// 	printf("%d\n", ft_strncmp(str, str2, 5));
-// 	printf("%d\n", strncmp(str, str2, 5));
+// 	str = "Hello";
+// 	c = 'l';
+// 	printf("%s\n", ft_strchr(str, c));
+// 	printf("%s\n", strchr(str, c));
 // 	return (0);
 // }

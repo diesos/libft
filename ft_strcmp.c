@@ -6,9 +6,11 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:58:23 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/02/16 09:50:36 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/01 18:11:19 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

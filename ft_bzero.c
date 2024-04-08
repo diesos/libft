@@ -1,49 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/25 17:08:01 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/01 18:10:56 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/01 17:35:56 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/01 18:11:01 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*ptr;
 
-	if (!dest)
-		return (dest);
+	ptr = s;
+	if (ptr == NULL)
+		return ;
 	i = 0;
-	while (src[i])
+	while (i < n)
 	{
-		dest[i] = src[i];
+		ptr[i] = '\0';
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	return (ft_strcpy(str, src));
 }

@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 20:01:32 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/04 13:55:33 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/06 13:16:36 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strlen(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
-	return (0);
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
-// #include <stdio.h>
-// #include <string.h>
 
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	*str2;
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+{
+	size_t	i;
+	size_t	len;
 
-// 	str = "Helld";
-// 	str2 = "Horld";
-// 	printf("%d\n", ft_strncmp(str, str2, 5));
-// 	printf("%d\n", strncmp(str, str2, 5));
-// 	return (0);
-// }
+	i = 0;
+	len = ft_strlen(src);
+	if (len != 0)
+	{
+		while (i < dstsize - 1)
+		{
+			if (src[i] == '\0')
+				break ;
+			else
+			{
+				dst[i] = src[i];
+				i++;
+			}
+		}
+		return (i);
+	}
+	else
+		return (0);
+}

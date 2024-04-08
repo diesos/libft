@@ -6,9 +6,11 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:39:10 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/02/16 09:54:16 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:16:22 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strstr(char *str, char *to_find)
 {

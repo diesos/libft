@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 20:01:32 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/08 18:27:04 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/08 18:38:04 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (!str1 || !str2)
+		return (1);
+	while (i < n)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
 	return (0);
 }
@@ -32,11 +37,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // int	main(void)
 // {
 // 	char	*str;
-// 	char	*str2;
+// 	char	*c;
 
-// 	str = "Helld";
-// 	str2 = "Horld";
-// 	printf("%d\n", ft_strncmp(str, str2, 5));
-// 	printf("%d\n", strncmp(str, str2, 5));
+// 	str = "Bbby";
+// 	c = "Baby";
+// 	printf("Real function : %d\n", ft_memcmp(str, c, 4));
+// 	printf("My function : %d\n", memcmp(str, c, 4));
+// 	printf("Zero condition :\n");
+// 	printf("%d\n", memcmp(str, c, 0));
+// 	printf("%d\n", memcmp(str, c, 0));
 // 	return (0);
 // }

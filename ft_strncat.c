@@ -6,9 +6,11 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 12:17:22 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/02/19 15:28:03 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/01 18:11:28 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {

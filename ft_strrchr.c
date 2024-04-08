@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 20:01:32 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/06 19:26:47 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/06 19:40:22 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
+	int		i;
+	char	*ptr;
 
+	ptr = (char *)s;
+	if (!ptr)
+		return (NULL);
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (ptr[i])
+		i++;
+	while (i > 0)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		if (ptr[i] == c)
+			return ((&(ptr[i])));
+		i--;
 	}
-	return (0);
+	return (&(ptr[i]));
 }
 // #include <stdio.h>
 // #include <string.h>
@@ -32,11 +37,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // int	main(void)
 // {
 // 	char	*str;
-// 	char	*str2;
+// 	int		c;
 
-// 	str = "Helld";
-// 	str2 = "Horld";
-// 	printf("%d\n", ft_strncmp(str, str2, 5));
-// 	printf("%d\n", strncmp(str, str2, 5));
+// 	str = "Baby";
+// 	c = 'b';
+// 	printf("%s\n", ft_strrchr(str, c));
+// 	printf("%s\n", strrchr(str, c));
 // 	return (0);
 // }

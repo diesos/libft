@@ -6,9 +6,11 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 19:47:48 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/02/12 19:48:10 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/01 18:11:24 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, char *src)
 {
