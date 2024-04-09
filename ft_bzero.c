@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 17:35:56 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/01 18:11:01 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:52:06 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,11 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*ptr;
 
-	ptr = s;
-	if (ptr == NULL)
-		return ;
 	i = 0;
 	while (i < n)
 	{
-		ptr[i] = '\0';
+		((unsigned char *)s)[i] = '\0';
 		i++;
 	}
 }
