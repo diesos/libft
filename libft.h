@@ -33,8 +33,8 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 // <------------------- atoi -------------------------->
-int		atoi(const char *str);
+int		ft_atoi(const char *str);
 // <--------------- calloc, strdup -------------------->
-void	*calloc(size_t count, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
