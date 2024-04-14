@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 19:47:48 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/14 17:25:36 by omeoztur         ###   ########.fr       */
+/*   Created: 2024/04/14 16:33:45 by omeoztur          #+#    #+#             */
+/*   Updated: 2024/04/14 16:40:04 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	unsigned int	i;
+	char			*ptr;
 
+	if (!*s)
+		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	ptr = malloc(sizeof(char) * len);
+	if (!ptr)
+		return (NULL);
+	while (i < len)
 	{
-		dest[i] = src[i];
+		ptr[i] == s[start];
 		i++;
+		start++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	ptr = '\0';
+	return (ptr);
 }
