@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:33:45 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/19 16:24:44 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:25:34 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
-	ptr = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }
