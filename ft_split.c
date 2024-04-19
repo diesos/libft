@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:00:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/17 22:18:09 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:22:34 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ size_t	token_counter(char const *s, char set)
 	}
 	return (token);
 }
+
 int	malloc_free(char **str_token, int pos, size_t buffer)
 {
 	int	i;

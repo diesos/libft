@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:22:02 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/17 23:07:13 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:23:20 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	len_nb(int n)
 	}
 	return (i);
 }
+
 char	*ft_itoa(int n)
 {
 	unsigned long	len;

@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:07:47 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/18 15:21:19 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:23:53 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	return (write(fd, &c, 1));
+	write(fd, &c, 1);
 }
