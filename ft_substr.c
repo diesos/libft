@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:33:45 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/14 16:40:04 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:24:44 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (i < len)
 	{
-		ptr[i] == s[start];
+		ptr[i] = s[start];
 		i++;
 		start++;
 	}
