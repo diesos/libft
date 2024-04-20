@@ -6,13 +6,13 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:55:58 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/21 00:20:01 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/21 00:28:25 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list *new;
 	
