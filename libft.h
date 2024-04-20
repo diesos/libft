@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:21:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/21 00:48:42 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/21 00:56:05 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void
 void ft_lstclear(t_list **lst, void (*del)(void
 *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),
+void (*del)(void *));
 
 #endif
