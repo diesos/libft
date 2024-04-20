@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:21:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/20 23:02:40 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/20 23:32:03 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-// <--------------- Bonuses ---------------------------------->
+// <--------------- Bonus ---------------------------------->
 typedef struct s_list
 {
 void *content;
