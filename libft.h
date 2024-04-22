@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:21:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 17:33:29 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:38:41 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,6 @@
 # include <string.h>
 # include <unistd.h>
 
-// <-------------- str -------------------------->
-size_t				ft_strlen(const char *s);
-char				*ft_strdup(const char *src);
-size_t				ft_strlcpy(char *restrict dst, const char *restrict src,
-						size_t dstsize);
-size_t				ft_strlcat(char *restrict dst, const char *restrict src,
-						size_t dstsize);
-char				*ft_strchr(const char *s, int c);
-char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *haystack, const char *needle,
-						size_t len);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
-char				*ft_strcpy(char *dest, const char *src);
 // <-----------------------mem --------------------------->
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -39,6 +26,17 @@ void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memcpy(void *restrict dst, const void *restrict src,
 						size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+// <-------------- str -------------------------->
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t				ft_strlen(const char *s);
+char				*ft_strdup(const char *src);
+size_t				ft_strlcat(char *restrict dst, const char *restrict src,
+						size_t dstsize);
+char				*ft_strchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
+char				*ft_strnstr(const char *haystack, const char *needle,
+						size_t len);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 // <---------------------- is ---------------------->
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
