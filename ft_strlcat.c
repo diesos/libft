@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:27:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/19 16:06:38 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 00:19:10 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	result = 0;
-	if (dstsize > len_dst)
-		result = len_src + len_dst;
-	else
+	if (dstsize <= len_dst)
 		result = len_src + dstsize;
+	else
+		result = len_src + len_src;
 	i = 0;
-	while (src[i] && len_dst <= dstsize)
+	while (src[i] && len_dst + i < dstsize - 1)
 	{
-		dst[len_dst] = src[i];
-		len_dst++;
+		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[len_dst] = '\0';
+	dst[len_dst + i] = '\0';
 	return (result);
 }
 
