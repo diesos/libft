@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 13:51:49 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/04 13:55:20 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:06:02 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	i = -1;
 	dest = (char *)dst;
-	source = (const char *)src;
-	if (!dst && !src)
-		return (0);
+	source = (char *)src;
 	if (dest < source)
 	{
 		while (++i < len)
