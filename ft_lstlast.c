@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:56:34 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/21 00:28:19 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:03:53 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst)
 	{
 		if (!lst->next)
-			break;
+			break ;
 		lst = lst->next;
 	}
 	return (lst);

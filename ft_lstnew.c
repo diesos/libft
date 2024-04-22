@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 22:55:58 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/21 00:28:25 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:03:41 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
-	
+	t_list	*new;
+
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);

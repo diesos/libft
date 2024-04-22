@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:47:11 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/21 00:28:38 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:03:26 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (lst)
 	{
 		count++;
 		if (!lst->next)
-			break;
+			break ;
 		else
 			lst = lst->next;
 	}
