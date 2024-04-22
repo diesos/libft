@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:21:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 11:00:01 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:33:29 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 // <-------------- str -------------------------->
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *src);
-size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t				ft_strlcpy(char *restrict dst, const char *restrict src,
+						size_t dstsize);
 size_t				ft_strlcat(char *restrict dst, const char *restrict src,
 						size_t dstsize);
 char				*ft_strchr(const char *s, int c);
