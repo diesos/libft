@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:14:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 14:16:38 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:08:54 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 123)
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	else
 		return (c);
