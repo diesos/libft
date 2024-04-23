@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:37:04 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 22:33:06 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:41:58 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
-
-	if (n == 2147483647)
+	if (n < 0)
 	{
-		ptr = "2147483647";
-		ft_putstr_fd(ptr, fd);
-		free(ptr);
+		ft_putchar_fd('-', fd);
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('2', fd);
+			ft_putnbr_fd(147483648, fd);
+			return ;
+		}
+		n = -n;
 	}
-	else if (n == -2147483648)
+	if (n > 9)
 	{
-		ptr = "-2147483648";
-		ft_putstr_fd(ptr, fd);
-		free(ptr);
+		ft_putnbr_fd(n / 10, fd);
 	}
-	ptr = ft_itoa(n);
-	ft_putstr_fd(ptr, fd);
-	free(ptr);
+	ft_putchar_fd(n % 10 + 48, fd);
 }
