@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:00:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 10:53:22 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:11:21 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,24 @@
 
 size_t	token_counter(char const *s, char set)
 {
-	size_t	buffer;
 	size_t	token;
 
+	if (s == NULL || *s == '\0')
+		return (0);
 	token = 0;
-	buffer = 1;
 	while (*s)
 	{
-		buffer = 1;
 		while (*s && *s == set)
 			++s;
+		if (*s == '\0')
+			break ;
+		if (*s)
+			token++;
 		while (*s && *s != set)
-		{
-			if (buffer)
-			{
-				buffer = 0;
-				token++;
-			}
 			++s;
-		}
 	}
+	printf("Total Token : %zu\n", token);
 	return (token);
-}
-
-int	malloc_free(char **str_token, int pos, size_t buffer)
-{
-	int	i;
-
-	i = 0;
-	str_token[pos] = malloc(buffer);
-	if (!str_token[pos])
-	{
-		while (i < pos)
-		{
-			free(str_token[i++]);
-		}
-		free(str_token);
-		return (1);
-	}
-	return (0);
 }
 
 int	malloc_split(char **str_token, char const *s, char set)
@@ -73,11 +52,11 @@ int	malloc_split(char **str_token, char const *s, char set)
 		}
 		if (len)
 		{
-			if (malloc_free(str_token, i, len + 1))
+			str_token[i] = malloc((len + 1) * sizeof(char));
+			if (!str_token[i])
 				return (1);
+			ft_strlcpy(str_token[i++], s - len, len + 1);
 		}
-		ft_strlcpy(str_token[i], s - len, len + 1);
-		++i;
 	}
 	return (0);
 }
@@ -89,7 +68,6 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	token = 0;
 	token = token_counter(s, c);
 	str_token = malloc(sizeof(char *) * (token + 1));
 	if (!str_token)
@@ -102,11 +80,19 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char	*s;
-// 	char	**str;
+// 	char	*string;
+// 	char	**expected;
+// 	char	**result;
+// 	int		i;
+// 	int		j;
 
-// 	s = "---Hello-World-How-Are-You?--de";
-// 	str = ft_split(s, '-');
-// 	while (*str)
-// 		printf("%s\n", *str++);
+// 	i = 0;
+// 	j = 0;
+// 	string = "      split  for   me  !       ";
+// 	while (result[i])
+// 	for (; i >= j; j++)
+// 	{
+// 		printf("%s\n", result[j]);
+// 	}
+// 	exit(0);
 // }

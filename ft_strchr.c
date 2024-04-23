@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:19:45 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 15:21:16 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:08:42 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
-	while (*s)
+	int	i;
+
+	i = 0;
+	while ((char)s[i])
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if ((char)s[i] == (char)c)
+			return (&((char *)s)[i]);
+		i++;
 	}
 	return (NULL);
 }

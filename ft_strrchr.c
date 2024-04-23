@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:26:47 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/06 19:40:22 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:01:12 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*ptr;
+	int	i;
 
-	ptr = (char *)s;
-	if (!ptr)
-		return (NULL);
 	i = 0;
-	while (ptr[i])
+	if (!s)
+		return (NULL);
+	while ((char)s[i])
 		i++;
-	while (i > 0)
+	while (i >= 0)
 	{
-		if (ptr[i] == c)
-			return ((&(ptr[i])));
+		if ((char)s[i] == (char)c)
+			return (&((char *)s)[i]);
 		i--;
 	}
-	return (&(ptr[i]));
+	return (NULL);
 }
 // #include <stdio.h>
 // #include <string.h>
