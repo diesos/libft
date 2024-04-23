@@ -6,93 +6,94 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:00:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 12:11:21 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:15:37 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	token_counter(char const *s, char set)
+static int	safe_free(char **str, int i)
 {
-	size_t	token;
-
-	if (s == NULL || *s == '\0')
-		return (0);
-	token = 0;
-	while (*s)
+	while (--i >= 0)
 	{
-		while (*s && *s == set)
-			++s;
-		if (*s == '\0')
-			break ;
-		if (*s)
-			token++;
-		while (*s && *s != set)
-			++s;
-	}
-	printf("Total Token : %zu\n", token);
-	return (token);
-}
-
-int	malloc_split(char **str_token, char const *s, char set)
-{
-	size_t	len;
-	int		i;
-
-	i = 0;
-	while (*s)
-	{
-		len = 0;
-		while (*s && *s == set)
-			++s;
-		while (*s && *s != set)
-		{
-			++len;
-			++s;
-		}
-		if (len)
-		{
-			str_token[i] = malloc((len + 1) * sizeof(char));
-			if (!str_token[i])
-				return (1);
-			ft_strlcpy(str_token[i++], s - len, len + 1);
-		}
+		if (str[i])
+			free(str[i]);
 	}
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
-	size_t	token;
-	char	**str_token;
+	int	i;
+	int	j;
 
-	if (!s)
-		return (NULL);
-	token = token_counter(s, c);
-	str_token = malloc(sizeof(char *) * (token + 1));
-	if (!str_token)
-		return (NULL);
-	str_token[token] = NULL;
-	if (malloc_split(str_token, s, c))
-		return (NULL);
-	return (str_token);
+	i = 0;
+	j = 0;
+	while (s[j])
+	{
+		if (s[j] != c && (s[j + 1] == c || s[j + 1] == '\0'))
+			i++;
+		j++;
+	}
+	return (i);
 }
 
-// int	main(void)
-// {
-// 	char	*string;
-// 	char	**expected;
-// 	char	**result;
-// 	int		i;
-// 	int		j;
+static void	tab_fill(char *str, char const *s, char c)
+{
+	int	i;
 
-// 	i = 0;
-// 	j = 0;
-// 	string = "      split  for   me  !       ";
-// 	while (result[i])
-// 	for (; i >= j; j++)
-// 	{
-// 		printf("%s\n", result[j]);
-// 	}
-// 	exit(0);
-// }
+	i = 0;
+	while (s[i] && s[i] != c)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+}
+
+static int	mem_set(char **tab, char const *s, char c)
+{
+	int	count;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		count = 0;
+		while (s[i + count] && s[i + count] != c)
+			count++;
+		if (count > 0)
+		{
+			tab[j] = malloc(sizeof(char) * (count + 1));
+			if (!tab[j])
+				return (safe_free(tab, j));
+			tab_fill(tab[j], s + i, c);
+			j++;
+			i = i + count;
+		}
+		else
+			i++;
+	}
+	tab[j] = 0;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	int		i;
+
+	i = word_count(s, c);
+	tab = malloc(sizeof(char *) * (i + 1));
+	if (!tab)
+		return (NULL);
+	i = mem_set(tab, s, c);
+	if (!i)
+	{
+		free(tab);
+		return (NULL);
+	}
+	return (tab);
+}

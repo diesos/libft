@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 00:31:35 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 10:04:10 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 21:55:34 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!lst || !del)
+	if (!lst || !*lst || !del)
 		return ;
 	while (*lst)
 	{
@@ -25,4 +25,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(*lst);
 		*lst = tmp;
 	}
+	*lst = NULL;
 }
