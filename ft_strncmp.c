@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 00:07:24 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:22:44 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t	len;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	i = 0;
-	if (n != 0)
-	{
-		while ((s1[i] || s2[i]) && i < n)
-		{
-			if (s1[i] != s2[i])
-				return (s1[i] - s2[i]);
-			i++;
-		}
-	}
-	return (0);
+	len = 0;
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	if (s1_len > s2_len)
+		len = s2_len + 1;
+	else
+		len = s1_len + 1;
+	if (n < len)
+		len = n;
+	return (ft_memcmp(s1, s2, len));
 }
 // #include <stdio.h>
 // #include <string.h>
