@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:19:45 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 14:13:29 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:20:56 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	return (memchr(s, c, ft_strlen(s) + 1));
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }
 // #include <stdio.h>
 // #include <string.h>
