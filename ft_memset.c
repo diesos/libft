@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 16:58:56 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 23:52:10 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:51:03 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (b)
+	while (i < len)
 	{
-		while (i < len)
-		{
-			((unsigned char *)b)[i] = (unsigned char)c;
-			i++;
-		}
-		return ((unsigned char *)b);
+		((unsigned char *)b)[i] = (unsigned char)c;
+		i++;
 	}
+	return ((unsigned char *)b);
 	return (NULL);
 }

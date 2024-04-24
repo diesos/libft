@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:38:50 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 14:29:36 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:13:59 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	needle_len;
 
-	if (!haystack || !needle)
-		return (0);
 	if (!*needle)
 		return ((char *)haystack);
 	needle_len = ft_strlen(needle);
