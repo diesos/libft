@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:37:04 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 22:41:58 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:29:26 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
