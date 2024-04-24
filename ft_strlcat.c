@@ -6,21 +6,21 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:27:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 13:49:55 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:09:01 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *s1, const char *s2, size_t n)
 {
 	size_t	dest_len;
 
-	dest_len = ft_strlen(dst);
-	if (dstsize <= dest_len)
-		return (dstsize + ft_strlen(src));
-	ft_strlcpy(dst + dest_len, src, dstsize - dest_len);
-	return (dest_len + ft_strlen(src));
+	dest_len = ft_strlen(s1);
+	if (n <= dest_len)
+		return (n + ft_strlen(s2));
+	ft_strlcpy(s1 + dest_len, s2, n - dest_len);
+	return (dest_len + ft_strlen(s2));
 }
 
 // int	main(void)
