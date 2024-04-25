@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:27:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/24 12:09:01 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:30:53 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcat(char *s1, const char *s2, size_t n)
 {
 	size_t	dest_len;
 
+	if (!s1 || !s2)
+		return (NULL);
 	dest_len = ft_strlen(s1);
 	if (n <= dest_len)
 		return (n + ft_strlen(s2));
