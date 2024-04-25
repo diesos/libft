@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 13:55:33 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 18:09:42 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:31:15 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len_src;
 
+	if (!dst || !src)
+		return (NULL);
 	len_src = ft_strlen(src);
 	if (len_src + 1 < dstsize)
 		ft_memcpy(dst, src, len_src + 1);
