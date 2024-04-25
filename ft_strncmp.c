@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 10:28:18 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 14:22:44 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:31:56 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	s1_len;
 	size_t	s2_len;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = 0;
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
