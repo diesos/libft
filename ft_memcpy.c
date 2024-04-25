@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 12:47:30 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/24 12:10:23 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:22:28 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*dest;
 	const unsigned char	*source;
 
+	if (!dst || !src)
+		return (NULL);
 	if (dst == src)
 		return (dst);
 	i = 0;

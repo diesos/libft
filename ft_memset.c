@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 16:58:56 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/24 12:51:03 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:22:49 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 
+	if (!b)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
