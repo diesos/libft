@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:00:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 21:15:37 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:25:45 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	i = word_count(s, c);
 	tab = malloc(sizeof(char *) * (i + 1));
 	if (!tab)
