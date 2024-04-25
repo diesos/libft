@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:26:47 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/24 14:32:20 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:33:04 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*ptr;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	i = (int)ft_strlen(s);
 	ptr = (char *)s;
 	while (i >= 0)
