@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:32:52 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 22:47:07 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:19:12 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)

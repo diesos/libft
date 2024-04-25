@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 12:03:09 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/22 15:17:02 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:20:40 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_isalpha(int c)
 {
+	if (!c)
+		return (NULL);
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else

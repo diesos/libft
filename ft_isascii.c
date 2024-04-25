@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 12:20:31 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/04 12:25:06 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:20:49 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_isascii(int c)
 {
+	if (!c)
+		return (NULL);
 	if (c >= 0 && c <= 0177)
 		return (1);
 	else
