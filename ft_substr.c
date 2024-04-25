@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:33:45 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 14:57:38 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:35:05 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	sub_len;
 	char	*ptr;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	if (!s || start >= ft_strlen(s))
 		return (ft_strdup(""));
