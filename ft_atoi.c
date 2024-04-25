@@ -6,11 +6,19 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:29:35 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/08 20:14:56 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:36:26 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	check_overflow(int sign)
+{
+	if (sign == 1)
+		return (-1);
+	else
+		return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -33,9 +41,9 @@ int	ft_atoi(const char *str)
 	}
 	while (ptr[i] >= '0' && ptr[i] <= '9')
 	{
-		result = result * 10;
-		result = result + ptr[i] - '0';
-		i++;
+		result = result * 10 + ptr[i++] - '0';
+		if (result > 9223372036854775807)
+			return (check_overflow(sign));
 	}
 	return (result * sign);
 }
@@ -51,9 +59,9 @@ int	ft_atoi(const char *str)
 // 	int		i;
 
 // 	i = 0;
-// 	num = "                  -23";
-// 	num2 = "               -444";
-// 	num3 = "              -+44";
+// 	num = "9223372036854775810";
+// 	num2 = "9223372036854775803";
+// 	num3 = "              44";
 // 	printf("Real atoi :%d | My atoi : %d\n ", atoi(num), ft_atoi(num));
 // 	printf("Real atoi :%d | My atoi : %d\n", atoi(num2), ft_atoi(num2));
 // 	printf("Real atoi :%d | My atoi : %d\n", atoi(num3), ft_atoi(num3));

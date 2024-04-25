@@ -6,13 +6,13 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:38:33 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/15 16:57:21 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:27:35 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_char(char const c, char const *set)
+static int	check_char(char const c, char const *set)
 {
 	size_t	i;
 

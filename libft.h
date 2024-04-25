@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:21:14 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/24 15:20:00 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:02:45 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 // <---------------------- is ---------------------->
-int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

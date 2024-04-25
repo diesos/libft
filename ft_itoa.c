@@ -6,13 +6,13 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 22:22:02 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/19 16:23:20 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:37:28 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_nb(int n)
+static int	len_nb(int n)
 {
 	unsigned long	i;
 
