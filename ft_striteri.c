@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:37:17 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/23 13:21:53 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:30:10 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
