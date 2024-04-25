@@ -6,7 +6,7 @@
 /*   By: omeoztur <omeoztur@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:38:33 by omeoztur          #+#    #+#             */
-/*   Updated: 2024/04/25 23:33:42 by omeoztur         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:34:37 by omeoztur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = -1;
 	start = 0;
 	end = ft_strlen(s1);
